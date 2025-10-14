@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie Watchlist</title>
+
+    <!-- Material Icons + Materialize CSS (added) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <!-- Your styles AFTER Materialize so you can override -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Movie Watchlist</h1>
+        </header>
+
+        <!-- Controls -->
+        <section class="panel grid" aria-label="List controls">
+            <div>
+                <label for="search-input" class="active">Search</label>
+                <input id="search-input" type="search" placeholder="Search title or category…" />
+            </div>
+            <div>
+                <label for="filter-category" class="active">Filter by Category</label>
+                <select id="filter-category">
+                    <option value="all" selected>All</option>
+                    <option>Action</option>
+                    <option>Comedy</option>
+                    <option>Drama</option>
+                    <option>Horror</option>
+                    <option>Sci-Fi</option>
+                    <option>Romance</option>
+                    <option>Animation</option>
+                    <option>Documentary</option>
+                </select>
+            </div>
+            <div>
+                <label for="sort-select" class="active">Sort</label>
+                <select id="sort-select">
+                    <option value="recent" selected>Most Recent</option>
+                    <option value="title">Title (A–Z)</option>
+                    <option value="rating">Rating (High→Low)</option>
+                </select>
+            </div>
+            <div class="grid-full" id="status" aria-live="polite"></div>
+        </section>
+
+        <!-- Add Movie -->
+        <section class="panel" aria-label="Add movie form">
+            <form id="movie-form" class="grid" autocomplete="off">
+                <div class="grid-full">
+                    <label for="movie-input" class="active">Movie Title *</label>
+                    <input id="movie-input" name="title" type="text" placeholder="Enter a title" required />
+                </div>
+
+                <div>
+                    <label for="category-input" class="active">Category (optional)</label>
+                    <select id="category-input" name="category">
+                        <option value="" selected>—</option>
+                        <option>Action</option>
+                        <option>Comedy</option>
+                        <option>Drama</option>
+                        <option>Horror</option>
+                        <option>Sci-Fi</option>
+                        <option>Romance</option>
+                        <option>Animation</option>
+                        <option>Documentary</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="rating-input" class="active">Rating (optional)</label>
+                    <input id="rating-input" name="rating" type="number" min="0" max="10" step="0.1"
+                        placeholder="0 - 10" />
+                </div>
+
+                <div class="actions grid-full">
+                    <!-- add Materialize button styles (minimal change) -->
+                    <button id="add-btn" type="submit" class="btn waves-effect waves-light">
+                        Add Movie
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Watchlist -->
+        <section class="panel" aria-label="Watchlist">
+            <h5 class="watchlist-header">My Watchlist</h5>
+            <ul id="watchlist" class="list" aria-live="polite"></ul>
+        </section>
+    </div>
+
+    <!-- Materialize JS (added) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Your app logic -->
+    <script src="watchlist.js"></script>
+</body>
+
+</html>

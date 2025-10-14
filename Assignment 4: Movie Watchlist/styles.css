@@ -1,0 +1,116 @@
+/* Base */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* === container card (was .container) === */
+.wrap {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* header */
+header h1 {
+  color: #333;
+  font-weight: bold;   /* was h3 */
+  margin: 0 0 8px;
+}
+header p { margin: 0 0 16px; color: #666; }
+
+/* panels mimic cards */
+.panel {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid #eee;
+  margin-top: 16px;
+}
+
+/* simple grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.grid-full { grid-column: 1 / -1; }
+
+/* inputs (was plain input rule) */
+.panel input,
+.panel select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+/* status line */
+#status { color: #2f6f4f; min-height: 1rem; }
+
+/* watchlist (was #movie-list) */
+#watchlist {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+/* list item (was .collection-item) */
+.movie-row {
+  display: flex;                  /* keep the “title left, buttons right” layout */
+  justify-content: space-between; /* was in .collection-item */
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+}
+.movie-title { font-weight: 500; }  /* was .collection-item .movie-title */
+
+/* chips/badges if your JS adds them */
+.movie-chip {
+  font-size: 0.85rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  margin-left: 8px;
+  color: #444;
+  background: #f3f6f8;
+}
+
+/* remove button (was .remove-btn) */
+.btn-remove,
+.remove-btn {
+  color: red;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.btn-remove:hover,
+.remove-btn:hover { background: rgba(255,0,0,0.08); }
+
+/* add button (map both ids for safety) */
+/* Tidy Materialize button sizing */
+#add-btn.btn {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 24px;
+  border-radius: 6px;     /* remove the pill look; change to taste */
+  text-transform: uppercase;
+  background-color: #00796b;  /* your teal */
+}
+#add-btn.btn:hover {
+  background-color: #004d40;
+}
+
+
+/* keep things tidy on small screens */
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+}
