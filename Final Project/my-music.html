@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Darat's Music Library – My Tracks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="music-page">
+
+  <!-- Vertical side nav -->
+  <aside class="landing-side-nav">
+    <div class="side-nav-top">
+      <nav class="side-nav-links">
+        <a href="index.html">HOME</a>
+        <a href="favorites.html">FAVORITES</a>
+        <a href="my-music.html">MY TRACKS</a>
+        <a href="recommend.html">RECOMMEND</a>
+      </nav>
+    </div>
+    <div class="side-nav-bottom">
+      <div class="side-nav-logo">DARAT</div>
+    </div>
+  </aside>
+
+  <!-- Background image -->
+  <div class="music-bg"></div>
+
+  <!-- Overlay content -->
+  <div class="music-overlay">
+
+    <!-- Page title -->
+    <header class="page-title-block">
+      <p class="page-tag">DARAT'S MUSIC LIBRARY</p>
+      <h1>My Tracks.</h1>
+      <p class="page-sub">Original ideas and demos I've made.</p>
+    </header>
+
+    <!-- Main content -->
+    <main class="content-panel">
+
+      <!-- Sort controls -->
+      <div class="sort-row">
+        <div class="sort-controls">
+          <label for="musicSort">Sort by:</label>
+          <select id="musicSort">
+            <option value="title-asc">Title (A → Z)</option>
+            <option value="year-newest">Year (Newest → Oldest)</option>
+            <option value="year-oldest">Year (Oldest → Newest)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Track list (filled by JS) -->
+      <section id="myMusicList" class="tracks-section my-music-list"></section>
+
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
